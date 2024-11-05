@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo de fondo -->
+  <circle cx="256" cy="256" r="240" fill="#7289DA"/>
+  
+  <!-- Letra K -->
+  <path d="M160 120V392H200V270L320 392H374L238 252L374 120H320L200 242V120H160Z" fill="white"/>
+  
+  <!-- Elementos decorativos -->
+  <circle cx="160" cy="120" r="8" fill="white"/>
+  <circle cx="374" cy="392" r="8" fill="white"/>
+  <path d="M238 252L244 258L250 252L244 246L238 252Z" fill="white"/>
+</svg> 
