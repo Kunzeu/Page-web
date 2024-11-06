@@ -1,113 +1,132 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navegación suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Animación de aparición al scroll
+    // Navegación mejorada
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+    
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.3,
+        rootMargin: "-50% 0px"
     };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
             }
         });
     }, observerOptions);
-
-    document.querySelectorAll('.feature-card, .command').forEach((el) => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-
-    // Menú móvil
-    const menuButton = document.createElement('button');
-    menuButton.classList.add('menu-toggle');
-    menuButton.innerHTML = '<i class="fas fa-bars"></i>';
     
-    const nav = document.querySelector('nav');
-    nav.appendChild(menuButton);
+    sections.forEach(section => observer.observe(section));
 
-    menuButton.addEventListener('click', () => {
-        const ul = document.querySelector('nav ul');
-        ul.classList.toggle('active');
-    });
-
-    // Efecto parallax en el hero
-    window.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const scrolled = window.pageYOffset;
-        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-    });
-
-    // Contador de estadísticas animado
-    const stats = document.querySelectorAll('.stat-number');
-    stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const increment = target / 100;
-        
-        function updateCount() {
-            const count = parseInt(stat.innerText);
-            if (count < target) {
-                stat.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 10);
-            } else {
-                stat.innerText = target;
+    // Animaciones de scroll mejoradas
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                animateOnScroll.unobserve(entry.target);
             }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px'
+    });
+
+    document.querySelectorAll('.feature-card, .command').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        animateOnScroll.observe(el);
+    });
+
+    // Menú móvil mejorado
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+    
+    if (menuButton) {
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuButton.classList.toggle('active');
+            
+            // Animación del ícono
+            const icon = menuButton.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    }
+
+    // Efecto parallax suavizado
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const hero = document.querySelector('.hero');
+                const scrolled = window.pageYOffset;
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
+    });
+
+    // Copiar comandos al portapapeles
+    document.querySelectorAll('.command code').forEach(cmd => {
+        cmd.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(cmd.textContent);
+                
+                // Feedback visual
+                const originalText = cmd.textContent;
+                cmd.textContent = '¡Copiado!';
+                cmd.style.background = 'rgba(114, 137, 218, 0.2)';
+                
+                setTimeout(() => {
+                    cmd.textContent = originalText;
+                    cmd.style.background = 'rgba(0, 0, 0, 0.2)';
+                }, 1500);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+            }
+        });
         
-        updateCount();
+        // Indicador visual de que es copiable
+        cmd.title = 'Click para copiar';
+        cmd.style.cursor = 'pointer';
     });
 });
 
-// Añade estas clases CSS adicionales para las animaciones
+// Añadir clases de animación
 const styles = `
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--secondary-color);
-        padding: 1rem;
+    .animate {
+        opacity: 1;
+        transform: translateY(0);
     }
-}
+
+    .nav-link.active {
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        nav ul.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .menu-toggle.active {
+            color: var(--primary-color);
+        }
+    }
 `;
 
-// Añade los estilos dinámicamente
 const styleSheet = document.createElement('style');
 styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
