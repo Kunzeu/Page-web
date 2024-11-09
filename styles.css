@@ -768,3 +768,31 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+.command-card {
+    background: #2c2f33;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.command-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #1e2124;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.command {
+    color: #7289da;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+.command-description {
+    color: #ffffff;
+    font-size: 0.95em;
+    text-align: right;
+}
