@@ -117,6 +117,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateThemeIcon(theme) {
         themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
+
+    // Manejar clicks en enlaces con data-scroll
+    document.querySelectorAll('a[data-scroll]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('data-scroll');
+            
+            // Si estamos en la página index.html
+            if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // Si estamos en otra página, redirigir a index.html con el scroll después de cargar
+                window.location.href = `/index.html?scroll=${sectionId}`;
+            }
+        });
+    });
+
+    // Verificar si hay un parámetro de scroll al cargar la página
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollTo = urlParams.get('scroll');
+    if (scrollTo) {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 });
 
 // Añadir clases de animación
