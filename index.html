@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunzeu Bot</title>
-    <meta name="description" content="Guild Wars 2 Discord bot for real-time Trading Post prices and market information">
-    <link rel="stylesheet" href="styles.css">
+    <title>Moodle Bot</title>
+    <meta name="description" content="Discord bot for Guild Wars 2 players with Trading Post prices, moderation tools, and custom commands">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="bot-logo.png">
+    <link rel="icon" type="image/png" href="assets/img/bot-logo.png">
 </head>
 <body>
     <header>
@@ -17,138 +17,180 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logo">
-                <img src="bot-logo.png" alt="Kunzeu Bot Logo">
-                <h1>Kunzeu Bot</h1>
+                <img src="assets/img/bot-logo.png" alt="Moodle Bot Logo">
+                <h1>Moodle Bot</h1>
             </div>
             <ul>
                 <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="index.html" data-scroll="caracteristicas"><i class="fas fa-star"></i> Features</a></li>
-                <li><a href="index.html" data-scroll="comandos"><i class="fas fa-terminal"></i> Commands</a></li>
+                <li><a href="#features" data-scroll="features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="#commands" data-scroll="commands"><i class="fas fa-terminal"></i> Commands</a></li>
                 <li><a href="changelog.html"><i class="fas fa-history"></i> Changelog</a></li>
-                <li><a href="index.html" data-scroll="footer"><i class="fas fa-headset"></i> Support</a></li>
-                
+                <li><a href="#footer" data-scroll="footer"><i class="fas fa-headset"></i> Support</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <h1>Your Perfect Guild Wars 2 Market Assistant</h1>
-            <p>Get real-time Trading Post prices and market information directly in your Discord server</p>
+            <h1>Your Ultimate Guild Wars 2 Discord Bot</h1>
+            <p>Get real-time Trading Post prices, moderation tools, and custom commands for your Discord server</p>
             <div class="cta-buttons">
                 <a href="https://discord.com/oauth2/authorize?client_id=1134643165735944233" class="btn primary">
                     <i class="fab fa-discord"></i> Add to Discord
                 </a>
+                <a href="https://github.com/Kunzeu/Moodle" class="btn secondary">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
         </section>
 
-        <section id="caracteristicas">
+        <section id="features">
             <h2>Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-coins"></i>
-                    <h3>Item Prices</h3>
-                    <p>Get current prices for Ectos, Mystic Coins, and other valuable items</p>
+                    <h3>Trading Post Integration</h3>
+                    <p>Real-time prices for items, materials, and gems</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-search"></i>
-                    <h3>Item Search</h3>
-                    <p>Search any item by ID using the Guild Wars 2 API</p>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Moderation Tools</h3>
+                    <p>Auto-timeout, role management, and custom commands</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-calculator"></i>
-                    <h3>Crafting Calculator</h3>
-                    <p>Calculate materials and costs for Mystic Clovers and other items</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-box-open"></i>
-                    <h3>Delivery Box</h3>
-                    <p>Check your Trading Post delivery box contents</p>
+                    <h3>Advanced Calculations</h3>
+                    <p>Calculate prices for Mystic Clovers, Gifts, and more</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-clock"></i>
-                    <h3>Real-time Updates</h3>
-                    <p>Data updated every 5 minutes from the official API</p>
+                    <h3>Daily Features</h3>
+                    <p>Check daily fractals and server time</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Inventory Search</h3>
+                    <p>Search items across material bank, inventory, and storage</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Custom Commands</h3>
+                    <p>Create, edit, and manage custom server commands</p>
                 </div>
             </div>
         </section>
 
-        <section id="comandos">
+        <section id="commands">
             <h2>Main Commands</h2>
             <div class="commands-list">
-                <div class="command">
-                    <code>/item</code>
-                    <p>Check item values</p>
+                <div class="command-category">
+                    <h3>Trading Post Commands</h3>
+                    <div class="command">
+                        <code>/item &lt;search&gt;</code>
+                        <p>Check item prices</p>
+                    </div>
+                    <div class="command">
+                        <code>/delivery</code>
+                        <p>Check Trading Post delivery box</p>
+                    </div>
+                    <div class="command">
+                        <code>/tpcompra</code>
+                        <p>View your purchase orders</p>
+                    </div>
+                    <div class="command">
+                        <code>/tpventa</code>
+                        <p>View your sale listings</p>
+                    </div>
                 </div>
-                <div class="command">
-                    <code>/clovers</code>
-                    <p>Calculate current Mystic Clover price</p>
+
+                <div class="command-category">
+                    <h3>Material Commands</h3>
+                    <div class="command">
+                        <code>/t3</code> to <code>/t6</code>
+                        <p>Check material tier prices</p>
+                    </div>
+                    <div class="command">
+                        <code>/materials</code>
+                        <p>View Gift material prices</p>
+                    </div>
+                    <div class="command">
+                        <code>/gift</code>
+                        <p>Check GOMS, GOJMS, GOJW prices</p>
+                    </div>
                 </div>
-                <div class="command">
-                    <code>/delivery</code>
-                    <p>Check your delivery box items</p>
+
+                <div class="command-category">
+                    <h3>Utility Commands</h3>
+                    <div class="command">
+                        <code>/search</code>
+                        <p>Search across inventories</p>
+                    </div>
+                    <div class="command">
+                        <code>/hora</code>
+                        <p>Check server time</p>
+                    </div>
+                    <div class="command">
+                        <code>/fractales</code>
+                        <p>View daily fractals</p>
+                    </div>
+                    <div class="command">
+                        <code>/gemas</code>
+                        <p>Check current gem prices</p>
+                    </div>
                 </div>
-                <div class="command">
-                    <code>/t3</code>
-                    <p>Check T3 material prices</p>
+
+                <div class="command-category">
+                    <h3>API Management</h3>
+                    <div class="command">
+                        <code>/apikey</code>
+                        <ul class="subcommands">
+                            <li>add - Register your API key</li>
+                            <li>remove - Delete your API key</li>
+                            <li>check - Verify your API key</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="command">
-                    <code>/t4</code>
-                    <p>Check T4 material prices</p>
-                </div>
-                <div class="command">
-                    <code>/t5</code>
-                    <p>Check T5 material prices</p>
-                </div>
-                <div class="command">
-                    <code>/t6</code>
-                    <p>Check T6 material prices</p>
-                </div>
-                <div class="command">
-                    <code>/magic</code>
-                    <p>Check Gift of Condensed Magic price</p>
-                </div>
-                <div class="command">
-                    <code>/might</code>
-                    <p>Check Gift of Condensed Might price</p>
-                </div>
-                <div class="command">
-                    <code>/gi</code>
-                    <p>Displays the price of GOMS and GOJMS</p>
-                </div>
-                <div class="command">
-                    <code>/apikey</code>
-                    <ul class="subcommands">
-                        <li>add - Register your API key</li>
-                        <li>remove - Delete your API key</li>
-                        <li>check - Verify your API key</li>
-                    </ul>
-                </div>
-                
             </div>
         </section>
-
     </main>
 
     <footer id="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Kunzeu - All rights reserved</p>
-            <div class="social-links">
-                <a href="https://github.com/Kunzeu" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://discord.com/users/552563672162107431" title="Discord"><i class="fab fa-discord"></i></a>
-                <a href="https://x.com/Kunzeuu1" title="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+            <div class="footer-section">
+                <h3>About Moodle Bot</h3>
+                <p>A powerful Discord bot for Guild Wars 2 players, featuring Trading Post integration, moderation tools, and custom commands.</p>
             </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#commands">Commands</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="https://github.com/Kunzeu/Moodle">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Kunzeu" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/users/552563672162107431" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://x.com/Kunzeuu1" title="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Moodle Bot - All rights reserved</p>
         </div>
     </footer>
 
     <div class="support-banner">
         <div class="support-content">
-            <a href="https://www.patreon.com/c/KunzeuBot" target="_blank" class="patreon-link">
+            <a href="https://www.patreon.com/c/MoodleBot" target="_blank" class="patreon-link">
                 <i class="fab fa-patreon"></i> Support on Patreon
             </a>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

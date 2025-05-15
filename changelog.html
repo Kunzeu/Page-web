@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Changelog - Kunzeu Bot</title>
-    <meta name="description" content="Update history and changelog for Kunzeu Bot">
-    <link rel="stylesheet" href="styles.css">
+    <title>Changelog - Moodle Bot</title>
+    <meta name="description" content="Latest updates and changes to the Moodle Bot Discord bot">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="bot-logo.png">
+    <link rel="icon" type="image/png" href="assets/img/bot-logo.png">
 </head>
 <body>
     <header>
         <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
             <div class="logo">
-                <img src="bot-logo.png" alt="Kunzeu Bot Logo">
-                <h1>Kunzeu Bot</h1>
+                <img src="assets/img/bot-logo.png" alt="Moodle Bot Logo">
+                <h1>Moodle Bot</h1>
             </div>
             <ul>
                 <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="index.html" data-scroll-redirect="caracteristicas"><i class="fas fa-star"></i> Features</a></li>
-                <li><a href="index.html" data-scroll-redirect="comandos"><i class="fas fa-terminal"></i> Commands</a></li>
+                <li><a href="/#features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="/#commands"><i class="fas fa-terminal"></i> Commands</a></li>
                 <li><a href="changelog.html" class="active"><i class="fas fa-history"></i> Changelog</a></li>
-                <li><a href="index.html" data-scroll-redirect="footer"><i class="fas fa-headset"></i> Support</a></li>
-                
+                <li><a href="/#footer"><i class="fas fa-headset"></i> Support</a></li>
             </ul>
         </nav>
     </header>
@@ -31,107 +33,87 @@
     <main class="changelog-page">
         <div class="changelog-header-main">
             <h1>Changelog</h1>
-            <p>Track all updates and improvements to Kunzeu Bot</p>
+            <p>Track the latest updates and improvements to Moodle Bot</p>
         </div>
-        
-        <div class="changelog-container">
-            <div class="changelog-entry">
-                <div class="version-badge">Latest</div>
-                <div class="changelog-header">
-                    <h2>Version 1.2.0</h2>
-                    <span class="date">November 05, 2024</span>
-                </div>
-                <div class="changelog-content">
-                    <div class="change-category">
-                        <h3><i class="fas fa-rocket"></i> New Features</h3>
-                        <ul>
-                            <li>Added new enhanced interface for item price display</li>
-                            <li>Added API key management commands:
-                                <ul>
-                                    <br><li>/apikey - Add your API key</li>
-                                    <li>/remove - Remove your API key</li>
-                                    <li>/check - Check if your API key is registered</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="change-category">
-                        <h3><i class="fas fa-wrench"></i> Improvements</h3>
-                        <ul>
-                            <li>Improved error handling and user feedback</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="change-category">
-                        <h3><i class="fas fa-bug"></i> Bug Fixes</h3>
-                        <ul>
-                            <li>Fixed price display formatting issues</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <div class="changelog-entry">
+        <div class="changelog-entries">
+            <article class="changelog-entry">
+                <span class="version-badge">v1.0.0</span>
                 <div class="changelog-header">
-                    <h2>Version 1.1.0</h2>
-                    <span class="date">August 05, 2023</span>
+                    <h2>Initial Release</h2>
+                    <span class="date">March 15, 2024</span>
                 </div>
-                <div class="changelog-content">
-                    <div class="change-category">
-                        <h3><i class="fas fa-rocket"></i> New Features</h3>
-                        <ul>
-                            <li>Added new material price commands (/t3, /t4, /t5, /t6)</li>
-                            <li>Implemented delivery box checking feature (/delivery)</li>
-                            <li>Introduced Mystic Clover calculator (/clovers)</li>
-                            <li>Added basic item search functionality (/item)</li>
-                           
-                        </ul>
-                    </div>
-                    
-                    <div class="change-category">
-                        <h3><i class="fas fa-wrench"></i> Improvements</h3>
-                        <ul>
-                            <li>Updated command response format</li>
-                            <li>Added error messages for invalid commands</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <div class="changelog-entry">
-                <div class="changelog-header">
-                    <h2>Version 1.0.0</h2>
-                    <span class="date">July 28, 2023</span>
+                <div class="change-category">
+                    <h3><i class="fas fa-star"></i> New Features</h3>
+                    <ul>
+                        <li>Trading Post integration with real-time prices</li>
+                        <li>Material price checking commands (T3-T6)</li>
+                        <li>Mystic Clover calculator</li>
+                        <li>API key management system</li>
+                        <li>Trading Post delivery box checker</li>
+                        <li>Daily fractals command</li>
+                        <li>Server time command</li>
+                    </ul>
                 </div>
-                <div class="changelog-content">
-                    <div class="change-category">
-                        <h3><i class="fas fa-rocket"></i> Initial Release</h3>
-                        <ul>
-                            <li>Basic price checking functionality</li>
-                            <li>Support for common materials and items</li>
-                            <li>Discord server integration</li>
-                        </ul>
-                    </div>
+
+                <div class="change-category">
+                    <h3><i class="fas fa-shield-alt"></i> Moderation Tools</h3>
+                    <ul>
+                        <li>Auto-timeout system</li>
+                        <li>Role management configuration</li>
+                        <li>Custom command system</li>
+                    </ul>
                 </div>
-            </div>
+
+                <div class="change-category">
+                    <h3><i class="fas fa-search"></i> Search Features</h3>
+                    <ul>
+                        <li>Material bank search</li>
+                        <li>Inventory search</li>
+                        <li>Storage search</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3><i class="fas fa-calculator"></i> Calculators</h3>
+                    <ul>
+                        <li>Gift of Magic price calculator</li>
+                        <li>Gift of Might price calculator</li>
+                        <li>Gift of Jewelry Magic calculator</li>
+                        <li>Gift of Jade Weapon calculator</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </main>
 
     <footer id="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Kunzeu - All rights reserved</p>
-            <div class="social-links">
-                <a href="https://github.com/Kunzeu" target="_blank" rel="noopener noreferrer" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://discord.com/users/552563672162107431" target="_blank" rel="noopener noreferrer" title="Discord">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="https://x.com/Kunzeuu1" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
-                    <i class="fa-brands fa-x"></i>
-                </a>
+            <div class="footer-section">
+                <h3>About Moodle Bot</h3>
+                <p>A powerful Discord bot for Guild Wars 2 players, featuring Trading Post integration, moderation tools, and custom commands.</p>
             </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#commands">Commands</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="https://github.com/Kunzeu/Moodle">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Kunzeu" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/users/552563672162107431" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://x.com/Kunzeuu1" title="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Moodle Bot - All rights reserved</p>
         </div>
     </footer>
 
@@ -143,6 +125,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html> 
